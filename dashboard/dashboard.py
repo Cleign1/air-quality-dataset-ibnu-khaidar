@@ -127,6 +127,23 @@ def main():
         st.pyplot(fig)
         st.write("Berdasarkan tabel diatas, semenjak tahun 2013 suhu menurut 2 derajat dan stabil pada 14 derajat, dan tahun 2017 tidak dihitung karena datanya hanya sampai bulan februari, dan tidak cukup untuk memasukkan rata - ratanya ")
     
+    st.text("")
+    st.header("Hubungan Polusi PM2.5 dan PM10 pada waktu waktu tertentu")
     
+    perjam, perhari, perbulan, pertahun = st.tabs(['Per Hour','Per Day','Per  Month', 'Per Year'])
+
+    with perjam:
+        st.header('Hourly Pollution')
+        fig, ax = plt.subplots()
+        
+        ax.plot(polution_by_hour()['hour'], polution_by_hour()['PM2.5'], label='PM2.5')
+        ax.plot(polution_by_hour()['hour'], polution_by_hour()['PM10'], label='PM10')
+        ax.set_xlabel('Hour')
+        ax.set_ylabel('Pollutions (PM2.5 & PM10)')
+        ax.set_title("Hourly Pollution")
+        ax.legend()
+        
+        st.pyplot(fig)
+        
 
 main()
