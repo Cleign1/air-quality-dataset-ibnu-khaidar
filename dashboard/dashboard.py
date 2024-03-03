@@ -313,6 +313,8 @@ def main():
 
     st.write('Kandungan gas lain yang mempengaruhi kualitas udara adalah SO2 dan NO2, dan untuk SO2, memang tidak begitu banyak dibandingkan dengan NO2. SO2 dan NO2 adalah polutan udara yang dihasilkan dari aktivitas manusia, membentuk prekursor partikel berbahaya dan ozon troposfer, menyebabkan polusi udara yang berbahaya bagi kesehatan manusia dan merusak lingkungan. Konsentrasi yang tinggi dari kedua gas ini di atmosfer menyebabkan iritasi pada saluran pernapasan, mengurangi jarak pandang dan mengurangi kualitas udara secara keseluruhan. Pentingnya pengendalian emisi SO2 dan NO2 dalam perlindungan kualitas udara dan kesehatan masyarakat tidak dapat ditekankan lagi.')
 
+    st.header('Kesimpulan')
+    st.write("Berbagai aktivitas manusia, termasuk industri, transportasi, pertanian, dan pembakaran bahan bakar fosil, menghasilkan polutan udara seperti partikel debu, sulfur dioksida (SO2), nitrogen dioksida (NO2), karbon monoksida (CO), ozon (O3), senyawa organik volatil (VOCs), dan partikel-partikel lainnya. Polutan-polutan ini mencemari udara dan dapat menyebabkan berbagai masalah kesehatan dan lingkungan, termasuk iritasi saluran pernapasan, masalah pernapasan kronis, kerusakan tanaman, polusi udara, pemanasan global, dan berkurangnya kualitas udara secara keseluruhan. Oleh karena itu, pengendalian emisi polutan udara dan promosi praktik-praktik ramah lingkungan sangat penting untuk menjaga kualitas udara dan melindungi kesehatan manusia serta ekosistem Bumi.")
     
 
 
