@@ -160,6 +160,35 @@ def main():
         st.pyplot(fig)
         st.write("dari tabel diatas bisa disimpulkan bahwa polusi paling banyak ada di hari Kamis, Sabtu, Minggu, Senin untuk polusinya paling banyak adalah PM10 yang merupakan partikel yang berdiameter 10 Milimeter atau kurang, contoh dari asap industri, tempat pembangunan, tempat pembuangan akhir dan lainnya.")
 
+    with perbulan:
+        st.header("Monthly Pollution")
+        fig, ax = plt.subplots()
+
+        ax.plot(polution_by_month()['month'], polution_by_month()['PM2.5'], label='PM2.5')
+        ax.plot(polution_by_month()['month'], polution_by_month()['PM10'], label='PM10')
+        ax.set_xlabel('Monthly')
+        ax.set_ylabel('Pollutions (PM2.5 & PM10)')
+        ax.set_title('Monthly Pollution')
+        ax.legend()
+
+        st.pyplot(fig)
+        st.write("Dari Tabel diatas bisa disimpulkan bahwa Polusi PM10 paling tinggi ada di bulan maret dan PM2.5 ada di bulan December ini bisa dipengaruhi banyak faktor yang lain")
+
+    with pertahun:
+        st.header('Yearly Pollution')
+        fig, ax = plt.subplots()
+
+        ax.plot(polution_by_year()['year'], polution_by_year()['PM2.5'], label='PM2.5')
+        ax.plot(polution_by_year()['year'], polution_by_year()['PM10'], label='PM10')
+        ax.set_xlabel('Year')
+        ax.set_ylabel('Pollutions (PM2.5 & PM10)')
+        ax.set_title('Yearly Pollution')
+        ax.legend()
+
+        st.pyplot(fig)
+        st.write("Dari Chart diatas bisa disimpulkan bahwa Polusi meningkat dari tahun ke tahun, seiring berkembangnya zaman dan berjalannya waktu, polusi akan meningkat dan pada tahun 2017 merupakan puncaknya dan pada waktu 2016 masih ada upaya untuk menurunkan polusi udara")
         
+
+
 
 main()
