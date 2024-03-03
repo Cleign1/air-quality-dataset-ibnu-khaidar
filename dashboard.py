@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 aq_df = pd.read_csv("output.csv", delimiter=',')
 
 # group temprature by hour
+def temp_by_hour():
+    
 
 
 
