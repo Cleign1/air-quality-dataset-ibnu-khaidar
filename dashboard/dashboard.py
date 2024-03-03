@@ -61,7 +61,7 @@ def main():
         ax.plot(data1['hour'], data1['Temprature'])
         ax.set_xlabel('Hour')
         ax.set_ylabel('Temperature')
-        ax.set_title('Temperature by Hour')
+        ax.set_title('Hourly Temprature')
 
         # Display the plot in Streamlit
         st.pyplot(fig)
@@ -74,7 +74,7 @@ def main():
         ax.plot(data2['day'], data2['Temprature'])
         ax.set_xlabel('Days')
         ax.set_ylabel('Temprature')
-        ax.set_title('Temprature by  Days')
+        ax.set_title('Daily Temprature')
 
         st.pyplot(fig)
 
@@ -86,7 +86,19 @@ def main():
         ax.plot(data3['month'], data3['Temprature'])
         ax.set_xlabel('Months')
         ax.set_ylabel('Temprature')
-        ax.set_title('Temprature by Months')
+        ax.set_title('Monthly Temprature')
+
+        st.pyplot(fig)
+
+    with tab4:
+        st.header('Yearly Temprature')
+        fig, ax = plt.subplots()
+        data4 = temp_by_year()
+
+        ax.plot(data4['year'],data4['Temprature'])
+        ax.set_xlabel('Years')
+        ax.set_ylabel('Temprature')
+        ax.set_title('Yearly Temprature')
 
         st.pyplot(fig)
 
