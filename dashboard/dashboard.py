@@ -289,6 +289,27 @@ def main():
         plt.ylabel('Kandungan Gas (PPM)')
         st.pyplot(plt.gcf())
     
+    with gas2:
+        st.header('Other gas content per month')
+        plt.figure(figsize=(10,6))
+        plt.plot(othergas_permonth()['month'], othergas_permonth()['SO2'], label='SO2')
+        plt.plot(othergas_permonth()['month'], othergas_permonth()['NO2'], label='NO2')
+        plt.legend()
+        plt.title('Kandungan Gas lain per Bulan')
+        plt.xlabel('Bulan')
+        plt.ylabel('Kandungan Gas (PPM)')
+        st.pyplot(plt.gcf())
+
+    with gas3:
+        st.header('Other gas content per year')
+        plt.figure(figsize=(10,6))
+        plt.plot(othergas_peryear()['year'], othergas_peryear()['SO2'], label='SO2')
+        plt.plot(othergas_peryear()['year'], othergas_peryear()['NO2'], label='NO2')
+        plt.legend()
+        plt.title('Kandungan Gas lain per Tahun')
+        plt.xlabel('Tahun')
+        plt.ylabel('Kandungan Gas (PPM)')
+        st.pyplot(plt.gcf())        
 
 
 main()
