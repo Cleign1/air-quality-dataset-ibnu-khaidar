@@ -98,6 +98,8 @@ def othergas_peryear():
     return gas_content_per_year
 
 def main():
+    st.set_page_config(page_title='Air Quality Dashboard')
+
     st.title('Kualitas Udara')
 
     st.text('Standart Air Quality index')
