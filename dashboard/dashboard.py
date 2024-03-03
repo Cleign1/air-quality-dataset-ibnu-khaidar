@@ -237,6 +237,16 @@ def main():
         st.pyplot(plt.gcf())
         st.write("Dari Line chart diatas kandungan ozone di udara paling tinggi ada di 60 PPM yang masih masuk kategori aman di index kualitas udara dan yang paling rendah ada di hari selasa di 50 PPM")
 
+    with ozone2:
+        st.header("Monthly Ozone Content")
+        plt.figure(figsize=(10,6))
+        plt.plot(ozone_per_month()['month'], ozone_per_month()['O3'])
+        plt.title('Kandungan Ozone per Bulan')
+        plt.xlabel('Bulan')
+        plt.ylabel('Kandungan Ozone (PPM)')
+        st.pyplot(plt.gcf())
+        st.write("Dari chart diatas ada kandungan ozone yang berlebihan tetapi masih standar index aman dari mulai maret - september")
+
     
 
 
