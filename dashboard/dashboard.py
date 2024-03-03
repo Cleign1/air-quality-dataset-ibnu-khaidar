@@ -85,6 +85,8 @@ def main():
 
         # Display the plot in Streamlit
         st.pyplot(fig)
+        st.write("Berdasarkan pengamatan dari tabel, pada siang hari bisa tembus 18 derajat celcius yang mungkin disebabkan oleh kegiatan manusia dan kegiatan bangun membangun")
+
 
     with tab2:
         st.header('Daily Temprature')
@@ -97,6 +99,7 @@ def main():
         ax.set_title('Daily Temprature')
 
         st.pyplot(fig)
+        st.write("dari tabel diatas bisa disimpulkan suhu tertinggi ada di hari Rabu dan Jum'at dan suhu ter-rendah dicapai di hari Sabtu, pada hari sabtu saya menspekulasi masyarakat libur dan berdiam dirumah semua sehingga tidak ada aktivitas yang bisa meningkatkan polusi")
 
     with tab3:
         st.header('Monthly Temprature')
@@ -109,6 +112,7 @@ def main():
         ax.set_title('Monthly Temprature')
 
         st.pyplot(fig)
+        st.write("Berdasarkan tabel diatas, bisa disimpulkan bahwa bulan juli merupakan musim panas, dan wajar saja untuk mencapai suhu >25 derajat celcius.")
 
     with tab4:
         st.header('Yearly Temprature')
@@ -121,7 +125,8 @@ def main():
         ax.set_title('Yearly Temprature')
 
         st.pyplot(fig)
-
+        st.write("Berdasarkan tabel diatas, semenjak tahun 2013 suhu menurut 2 derajat dan stabil pada 14 derajat, dan tahun 2017 tidak dihitung karena datanya hanya sampai bulan februari, dan tidak cukup untuk memasukkan rata - ratanya ")
+    
     
 
 main()
