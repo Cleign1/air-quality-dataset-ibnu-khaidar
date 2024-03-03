@@ -6,6 +6,14 @@ import matplotlib.pyplot as plt
 # import dataset
 aq_df = pd.read_csv("data\output.csv", delimiter=',')
 
+# ordering days by default days monday to sunday
+hari = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+for col in aq_df.columns:
+    if aq_df[col].dtype == 'day':
+        aq_df[col] = aq_df[col].astype('category')
+
+aq_df['day'] = pd.Categorical(aq_df['day'], categories=hari, ordered=True)
+
 # group temprature by hour
 def temp_by_hour():
     temps_per_hour = aq_df.groupby('hour', as_index=False).agg({'Temprature':'mean'})
