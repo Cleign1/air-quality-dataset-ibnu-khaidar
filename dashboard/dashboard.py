@@ -4,7 +4,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # import dataset
-aq_df = pd.read_csv("output.csv", delimiter=',')
+aq_df = pd.read_csv("data\output.csv", delimiter=',')
 
 # group temprature by hour
 def temp_by_hour():
@@ -40,10 +40,10 @@ def main():
     with tab1:
         st.header('Hourly Temprature')
         fig, ax = plt.subplots()
-        data = temp_by_hour()
+        data1 = temp_by_hour()
 
         # Plot the data as a line chart
-        ax.plot(data['hour'], data['Temprature'])
+        ax.plot(data1['hour'], data1['Temprature'])
         ax.set_xlabel('Hour')
         ax.set_ylabel('Temperature')
         ax.set_title('Temperature by Hour')
@@ -51,6 +51,17 @@ def main():
         # Display the plot in Streamlit
         st.pyplot(fig)
 
+    with tab2:
+        st.header('Daily Temprature')
+        fig, ax = plt.subplots()
+        data2 =  temp_by_day()
+
+        ax.plot(data2['day'], data2['Temprature'])
+        ax.set_xlabel('Days')
+        ax.set_ylabel('Temprature')
+        ax.set_title('Temprature by  Days')
+
+        st.pyplot(fig)
 
 
 main()
