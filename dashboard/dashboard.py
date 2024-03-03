@@ -82,6 +82,21 @@ def ozone_per_year():
     ozone_content_per_year = aq_df.groupby('year', as_index=False).agg({'O3':'mean'})
     return ozone_content_per_year
 
+# gas lain di udara per day
+def othergas_perday():
+    gas_content_per_day = aq_df.groupby('day', as_index=False).agg({'SO2':'mean','NO2':'mean'})
+    return gas_content_per_day
+
+# gas lain di udara per month
+def othergas_permonth():
+    gas_content_per_month = aq_df.groupby('month', as_index=False).agg({'NO2':'mean','SO2':'mean'})
+    return gas_content_per_month
+
+# gas lain di udara per tahun
+def othergas_peryear():
+    gas_content_per_year = aq_df.groupby('year',as_index=False).agg({'NO2':'mean','SO2':'mean'})
+    return gas_content_per_year
+
 def main():
     st.title('Kualitas Udara')
 
@@ -257,7 +272,10 @@ def main():
         st.pyplot(plt.gcf())
         st.write("Ternyata ada penurunan Kandungan Ozone di udara, yang merupakan hal yang sangat baik. karena peningkatan ozon bisa menyebabkan penyakit kesehatan, kerusakan tanaman, Global warming, dll.")
 
-        
+
+    st.write("")
+    st.write("Faktor lain yang menyebabkan polusi udara adalah kandungan NO2 dan SO2 di udara")
+
 
 
 
