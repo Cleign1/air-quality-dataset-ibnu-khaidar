@@ -276,7 +276,19 @@ def main():
     st.write("")
     st.write("Faktor lain yang menyebabkan polusi udara adalah kandungan NO2 dan SO2 di udara")
 
+    gas1, gas2, gas3 = st.tabs(['Other gas per day','Other gas per month','Other gas per year'])
 
+    with gas1:
+        st.header('Other gas content per day')
+        plt.figure(figsize=(10,6))
+        plt.plot(othergas_perday()['day'], othergas_perday()['SO2'], label='SO2')
+        plt.plot(othergas_perday()['day'], othergas_perday()['NO2'], label='NO2')
+        plt.legend()
+        plt.title('Kandungan Gas lain per Hari')
+        plt.xlabel('Hari')
+        plt.ylabel('Kandungan Gas (PPM)')
+        st.pyplot(plt.gcf())
+    
 
 
 main()
