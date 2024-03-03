@@ -2,9 +2,9 @@
 
 Dashboard untuk hasil data analytics dari dataset Air Quality Dataset
 
-Nama    : Muhamad Ibnu Khaidar Hafiz
-ID      : M009D4KY3177
-Kelas   : ML-44
+- Nama    : Muhamad Ibnu Khaidar Hafiz
+- ID      : M009D4KY3177
+- Kelas   : ML-44
 
 Cara menggunakan Dashboard ini:
 1. Download dengan `git clone`
