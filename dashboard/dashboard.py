@@ -2,6 +2,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
 # import dataset
 aq_df = pd.read_csv("data\output.csv", delimiter=',')
@@ -61,6 +62,10 @@ def polution_by_year():
     polusi_per_year = aq_df.groupby(['year'], as_index=False).agg({'PM2.5':'mean','PM10':'mean'})
     return polusi_per_year
 
+# rain possibility based on humidity
+def rain_pos():
+    rain_possibility = aq_df.groupby('Pressure', as_index=False).agg({'RAIN':'max'})
+    return rain_possibility
 
 def main():
     st.title('Kualitas Udara')
@@ -187,7 +192,20 @@ def main():
 
         st.pyplot(fig)
         st.write("Dari Chart diatas bisa disimpulkan bahwa Polusi meningkat dari tahun ke tahun, seiring berkembangnya zaman dan berjalannya waktu, polusi akan meningkat dan pada tahun 2017 merupakan puncaknya dan pada waktu 2016 masih ada upaya untuk menurunkan polusi udara")
-        
+
+    # added rain probability
+    st.header("Kemungkinan terjadinya hujan karena tekanan udara")
+    plt.figure(figsize=(10, 6))
+    plt.scatter(rain_pos()['Pressure'], rain_pos()['RAIN'])
+    plt.xlabel('Tekanan Udara')
+    plt.ylabel('Kemungkinan Hujan')
+    plt.title('Probabilitas Hujan')
+
+    garis = plt.axvline(x=1013, ymin=0, ymax=100, color='r')
+    legend = Line2D([0], [0], color='r', label='Tekanan Udara = 1013')
+    plt.legend(handles=[legend])
+    st.pyplot(plt.gcf())
+    st.write('Berdasarkan dari scatter chart diatas, probabilitas akan terjadinya sebuah hujan bisa dipengaruhi dari teknanan udara, semakin rendah tekanan udara, semakin besar probabilitasnya terjadi hujan. contoh dari tabel diatas adalah, 1013 millibar atau yang digarisi warna merah dan dibawah angka standar tekanan udara, probabilitas hujan bisa lebih tinggi.')
 
 
 
