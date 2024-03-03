@@ -67,6 +67,21 @@ def rain_pos():
     rain_possibility = aq_df.groupby('Pressure', as_index=False).agg({'RAIN':'max'})
     return rain_possibility
 
+# ozone per day
+def ozone_per_day():
+    ozone_content = aq_df.groupby('day', as_index=False).agg({'O3':'mean'})
+    return ozone_content
+
+# ozone per month
+def ozone_per_month():
+    ozone_content_per_month = aq_df.groupby('month', as_index=False).agg({'O3':'mean'})
+    return ozone_content_per_month
+
+# ozone per year
+def ozone_per_year():
+    ozone_content_per_year = aq_df.groupby('year', as_index=False).agg({'O3':'mean'})
+    return ozone_content_per_year
+
 def main():
     st.title('Kualitas Udara')
 
@@ -206,6 +221,8 @@ def main():
     plt.legend(handles=[legend])
     st.pyplot(plt.gcf())
     st.write('Berdasarkan dari scatter chart diatas, probabilitas akan terjadinya sebuah hujan bisa dipengaruhi dari teknanan udara, semakin rendah tekanan udara, semakin besar probabilitasnya terjadi hujan. contoh dari tabel diatas adalah, 1013 millibar atau yang digarisi warna merah dan dibawah angka standar tekanan udara, probabilitas hujan bisa lebih tinggi.')
+
+    # 
 
 
 
