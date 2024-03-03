@@ -311,5 +311,9 @@ def main():
         plt.ylabel('Kandungan Gas (PPM)')
         st.pyplot(plt.gcf())        
 
+    st.write('Kandungan gas lain yang mempengaruhi kualitas udara adalah SO2 dan NO2, dan untuk SO2, memang tidak begitu banyak dibandingkan dengan NO2. SO2 dan NO2 adalah polutan udara yang dihasilkan dari aktivitas manusia, membentuk prekursor partikel berbahaya dan ozon troposfer, menyebabkan polusi udara yang berbahaya bagi kesehatan manusia dan merusak lingkungan. Konsentrasi yang tinggi dari kedua gas ini di atmosfer menyebabkan iritasi pada saluran pernapasan, mengurangi jarak pandang dan mengurangi kualitas udara secara keseluruhan. Pentingnya pengendalian emisi SO2 dan NO2 dalam perlindungan kualitas udara dan kesehatan masyarakat tidak dapat ditekankan lagi.')
+
+    
+
 
 main()
