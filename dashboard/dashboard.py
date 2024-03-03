@@ -247,7 +247,17 @@ def main():
         st.pyplot(plt.gcf())
         st.write("Dari chart diatas ada kandungan ozone yang berlebihan tetapi masih standar index aman dari mulai maret - september")
 
-    
+    with ozone3:
+        st.header('Yearly ozone Content')
+        plt.figure(figsize=(10,6))
+        plt.plot(ozone_per_year()['year'], ozone_per_year()['O3'])
+        plt.xlabel('Tahun')
+        plt.ylabel('O3 Content')
+        plt.title('Kandungan Ozone Tahun (PPM)')
+        st.pyplot(plt.gcf())
+        st.write("Ternyata ada penurunan Kandungan Ozone di udara, yang merupakan hal yang sangat baik. karena peningkatan ozon bisa menyebabkan penyakit kesehatan, kerusakan tanaman, Global warming, dll.")
+
+        
 
 
 
