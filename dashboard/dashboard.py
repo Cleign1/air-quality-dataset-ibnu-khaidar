@@ -144,6 +144,22 @@ def main():
         ax.legend()
         
         st.pyplot(fig)
+        st.write("Dari tabel diatas, bisa disimpulkan bahwa pada jam tertentu dimana pada jam tertentu polusi PM2.5 dan PM10 meningkat, hal ini terjadi karena pabrik mulai bekerja dan tidak ingin mengganggu cuaca pada saat orang beraktivitas di luar.")
+
+    with perhari:
+        st.header('Daily Pollution')
+        fig, ax = plt.subplots()
+
+        ax.plot(polution_by_day()['day'], polution_by_day()['PM2.5'], label='PM2.5')
+        ax.plot(polution_by_day()['day'], polution_by_day()['PM10'], label='PM10')
+        ax.set_xlabel('Daily')
+        ax.set_ylabel('Pollutions (PM2.5 & PM10)')
+        ax.set_title('Daily Pollution')
+        ax.legend()
+
+        st.pyplot(fig)
+        st.write("dari tabel diatas bisa disimpulkan bahwa polusi paling banyak ada di hari Kamis, Sabtu, Minggu, Senin untuk polusinya paling banyak adalah PM10 yang merupakan partikel yang berdiameter 10 Milimeter atau kurang, contoh dari asap industri, tempat pembangunan, tempat pembuangan akhir dan lainnya.")
+
         
 
 main()
