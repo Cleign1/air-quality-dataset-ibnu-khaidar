@@ -33,6 +33,23 @@ def main():
     st.text('Standart Air Quality index')
     st.image('Screenshot 2024-03-03 141028.png')
     st.text("")
+    st.text('Perbedaan Suhu Per jam')
+
+    tab1, tab2, tab3, tab4 = st.tabs(['By Hour','By Day', 'By Month', 'By Year'])
+
+    with tab1:
+        st.header('Hourly Temprature')
+        fig, ax = plt.subplots()
+        data = temp_by_hour()
+
+        # Plot the data as a line chart
+        ax.plot(data['hour'], data['Temprature'])
+        ax.set_xlabel('Hour')
+        ax.set_ylabel('Temperature')
+        ax.set_title('Temperature by Hour')
+
+        # Display the plot in Streamlit
+        st.pyplot(fig)
 
 
 
