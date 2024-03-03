@@ -14,6 +14,13 @@ for col in aq_df.columns:
 
 aq_df['day'] = pd.Categorical(aq_df['day'], categories=hari, ordered=True)
 
+month = ['January','February','March','April','May','June','July','August','September','October','November','December']
+for col in aq_df.columns:
+    if aq_df[col].dtype == 'month':
+        aq_df[col] = aq_df[col].astype('category')
+
+aq_df['month'] = pd.Categorical(aq_df['month'], categories=month, ordered=True)
+
 # group temprature by hour
 def temp_by_hour():
     temps_per_hour = aq_df.groupby('hour', as_index=False).agg({'Temprature':'mean'})
@@ -71,5 +78,16 @@ def main():
 
         st.pyplot(fig)
 
+    with tab3:
+        st.header('Monthly Temprature')
+        fig, ax = plt.subplots()
+        data3 = temp_by_month()
+
+        ax.plot(data3['month'], data3['Temprature'])
+        ax.set_xlabel('Months')
+        ax.set_ylabel('Temprature')
+        ax.set_title('Temprature by Months')
+
+        st.pyplot(fig)
 
 main()
