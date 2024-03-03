@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 # import dataset
-aq_df = pd.read_csv("../data/output.csv", delimiter=',')
+aq_df = pd.read_csv("data/output.csv", delimiter=',')
 
 # ordering days by default days monday to sunday
 hari = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
