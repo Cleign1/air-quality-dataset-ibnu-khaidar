@@ -222,7 +222,22 @@ def main():
     st.pyplot(plt.gcf())
     st.write('Berdasarkan dari scatter chart diatas, probabilitas akan terjadinya sebuah hujan bisa dipengaruhi dari teknanan udara, semakin rendah tekanan udara, semakin besar probabilitasnya terjadi hujan. contoh dari tabel diatas adalah, 1013 millibar atau yang digarisi warna merah dan dibawah angka standar tekanan udara, probabilitas hujan bisa lebih tinggi.')
 
-    # 
+    # ozone level
+
+    st.header('Ozone Content')
+    ozone1, ozone2, ozone3 = st.tabs(['Per Day', 'Per Month', 'Per Year'])
+
+    with ozone1:
+        st.header('Daily Ozone Content')
+        plt.figure(figsize=(10,6))
+        plt.plot(ozone_per_day()['day'], ozone_per_day()['O3'])
+        plt.xlabel('Hari')
+        plt.ylabel('O3 Content')
+        plt.title('Kandungan Ozone Tahun (PPM)')
+        st.pyplot(plt.gcf())
+        st.write("Dari Line chart diatas kandungan ozone di udara paling tinggi ada di 60 PPM yang masih masuk kategori aman di index kualitas udara dan yang paling rendah ada di hari selasa di 50 PPM")
+
+    
 
 
 
