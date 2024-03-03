@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 # import dataset
-aq_df = pd.read_csv("data\output.csv", delimiter=',')
+aq_df = pd.read_csv("/data/output.csv", delimiter=',')
 
 # ordering days by default days monday to sunday
 hari = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
@@ -315,7 +315,7 @@ def main():
 
     st.header('Kesimpulan')
     st.write("Berbagai aktivitas manusia, termasuk industri, transportasi, pertanian, dan pembakaran bahan bakar fosil, menghasilkan polutan udara seperti partikel debu, sulfur dioksida (SO2), nitrogen dioksida (NO2), karbon monoksida (CO), ozon (O3), senyawa organik volatil (VOCs), dan partikel-partikel lainnya. Polutan-polutan ini mencemari udara dan dapat menyebabkan berbagai masalah kesehatan dan lingkungan, termasuk iritasi saluran pernapasan, masalah pernapasan kronis, kerusakan tanaman, polusi udara, pemanasan global, dan berkurangnya kualitas udara secara keseluruhan. Oleh karena itu, pengendalian emisi polutan udara dan promosi praktik-praktik ramah lingkungan sangat penting untuk menjaga kualitas udara dan melindungi kesehatan manusia serta ekosistem Bumi.")
-    
+
 
 
 main()
