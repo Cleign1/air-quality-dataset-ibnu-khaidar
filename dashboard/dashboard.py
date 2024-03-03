@@ -41,6 +41,26 @@ def temp_by_year():
     temprature_per_year = aq_df.groupby('year', as_index=False).agg({'Temprature':'mean'})
     return temprature_per_year
 
+# group polutions by hour
+def polution_by_hour():
+    polusi_per_hour = aq_df.groupby(['hour'], as_index=False).agg({'PM2.5':'mean','PM10':'mean'})
+    return polusi_per_hour
+
+# group polutions by day
+def polution_by_day():
+    polusi_per_day = aq_df.groupby(['day'], as_index=False).agg({'PM2.5':'mean','PM10':'mean'})
+    return polusi_per_day
+
+# group polusi by month
+def polution_by_month():
+    polusi_per_bulan = aq_df.groupby(['month'], as_index=False).agg({'PM2.5':'mean','PM10':'mean'})
+    return polusi_per_bulan
+
+# group polusi by tahun
+def polution_by_year():
+    polusi_per_year = aq_df.groupby(['year'], as_index=False).agg({'PM2.5':'mean','PM10':'mean'})
+    return polusi_per_year
+
 
 def main():
     st.title('Kualitas Udara')
@@ -101,5 +121,7 @@ def main():
         ax.set_title('Yearly Temprature')
 
         st.pyplot(fig)
+
+    
 
 main()
